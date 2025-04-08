@@ -11,7 +11,7 @@ export default function App() {
   return (
     <div className="app">
       <QueryClientProvider client={queryClient}>
-        <Router>
+        <Router basename="/find-friends-app">
           <Suspense fallback={<div>Loading...</div>}>
             <Routes>
               <Route path="/" element={<UserListPage />} />

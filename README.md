@@ -23,8 +23,7 @@ npm run dev
  - Axios - HTTP-клиент с перехватчиками и поддержкой TypeScript
 
 ## Видео демонстрация
- - https://drive.google.com/file/d/1GhVd23fpikK5cCQQhwqGR_j66m4xTScK/view?usp=sharing
-
+ - https://drive.google.com/file/d/1u8rkaUMjsSWopiBl9pynvyVwpgePHOzB/view?usp=sharing
 ## Деплой на gh-pages:
  - 
 
