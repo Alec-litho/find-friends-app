@@ -1,0 +1,31 @@
+@use "../../assets/variables" as *;
+
+
+.container {
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .loading {
+    text-align: center;
+    font-size: 1.2rem;
+    color: $text-secondary;
+    padding: 2rem;
+  }
+
+  .error {
+    color: $error-color;
+    text-align: center;
+    padding: 2rem;
+    font-weight: 500;
+  }
+}
