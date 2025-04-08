@@ -1,0 +1,53 @@
+@use "../../assets/variables" as *;
+
+.detailContainer {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: $white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  .backButton {
+    margin-bottom: 2rem;
+    padding: 0.5rem 1rem;
+    background: $primary-color;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  .userInfo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+
+    .infoGroup {
+      padding: 1rem;
+      background: lighten($background-color, 2%);
+      border-radius: 6px;
+
+      h3 {
+        margin-top: 0;
+        color: $primary-color;
+        font-size: 1.1rem;
+      }
+
+      p {
+        margin: 0.5rem 0;
+        color: $text-primary;
+
+        strong {
+          color: $text-secondary;
+          margin-right: 0.5rem;
+        }
+      }
+    }
+  }
+}
