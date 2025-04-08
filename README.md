@@ -1,54 +1,32 @@
-# React + TypeScript + Vite
+# Find Friends App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## комманды:
+```bash
+npm i
+npm run dev   
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Оптимизация
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. Кэширование через React Query
+ - - Данные API считаются устаревшими через 5 минут
+ - - Автоматическая сборка мусора
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+2. Разделение кода (Code Splitting)
+ - - Разделение по маршрутам через React.lazy
+ - - Динамические импорты для нефункционального UI
+
+ ## Ключевые библиотеки
+ - React - библиотека для создания веб интерфейсов
+ - React Router v7 - Клиентская маршрутизация 
+ - React Query v5 - Управление состоянием сервера (кэширование, фоновые обновления)
+ - Axios - HTTP-клиент с перехватчиками и поддержкой TypeScript
+
+## Видео демонстрация
+ - https://drive.google.com/file/d/1GhVd23fpikK5cCQQhwqGR_j66m4xTScK/view?usp=sharing
+
+## Деплой на gh-pages:
+ - 
+
+ ## Дополнительно:
+ - Redux я не стал добовлять так как отсутствует сложная логика работы с состоянием приложения, но если бы мне надо было, то структура бы выглядела так: Хранилище будет содержать полный список пользователей, текущие параметры поиска и фильтров (например, возраст или город), информацию о выбранном пользователе, а также статусы загрузки и ошибок. При изменении условий поиска или фильтров автоматически обновляются данные, либо через запросы к серверу, либо через фильтрацию локального списка
